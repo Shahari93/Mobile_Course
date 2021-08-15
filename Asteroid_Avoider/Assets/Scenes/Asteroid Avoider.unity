@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxForceToAdd: 6
-  force: 850
+  force: 50
 --- !u!54 &1432133668
 Rigidbody:
   m_ObjectHideFlags: 0
