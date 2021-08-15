@@ -7,6 +7,7 @@ public class PlayerMovementScript : MonoBehaviour
 {
     [SerializeField] private float maxForceToAdd;
     [SerializeField] private float force;
+    [SerializeField] private float rotationSpeed;
 
     private Vector3 movement;
 
@@ -23,7 +24,10 @@ public class PlayerMovementScript : MonoBehaviour
     {
         ProcessInput();
         KeepPlayerInsideScreen();
+        RotateToFaceVelocity();
     }
+
+
 
     private void FixedUpdate()
     {
@@ -65,6 +69,36 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void KeepPlayerInsideScreen()
     {
-        throw new NotImplementedException();
+        Vector3 newPosition = transform.position;
+
+        //Transforms position from world space into viewport space.
+        Vector3 viewPortPos = mainCamera.WorldToViewportPoint(transform.position);
+        if (viewPortPos.x > 1)
+        {
+            newPosition.x = -newPosition.x + 0.2f;
+        }
+
+        else if (viewPortPos.x < 0)
+        {
+            newPosition.x = -newPosition.x - 0.2f;
+        }
+
+        if (viewPortPos.y > 1)
+        {
+            newPosition.y = -newPosition.y + 0.2f;
+        }
+
+        else if (viewPortPos.y < 0)
+        {
+            newPosition.y = -newPosition.y - 0.2f;
+        }
+        transform.position = newPosition;
+    }
+
+    private void RotateToFaceVelocity()
+    {
+        if (playerRB.velocity == Vector3.zero) { return; }
+        Quaternion targetRotation = Quaternion.LookRotation(playerRB.velocity, Vector3.back);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 }
