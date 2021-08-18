@@ -73,22 +73,22 @@ public class PlayerMovementScript : MonoBehaviour
         Vector3 viewPortPos = mainCamera.WorldToViewportPoint(transform.position);
         if (viewPortPos.x > 1)
         {
-            newPosition.x = -newPosition.x + 0.2f;
+            newPosition.x = -newPosition.x + 0.6f;
         }
 
         else if (viewPortPos.x < 0)
         {
-            newPosition.x = -newPosition.x - 0.2f;
+            newPosition.x = -newPosition.x - 0.6f;
         }
 
         if (viewPortPos.y > 1)
         {
-            newPosition.y = -newPosition.y + 0.2f;
+            newPosition.y = -newPosition.y + 0.6f;
         }
 
         else if (viewPortPos.y < 0)
         {
-            newPosition.y = -newPosition.y - 0.2f;
+            newPosition.y = -newPosition.y - 0.6f;
         }
         transform.position = newPosition;
     }
