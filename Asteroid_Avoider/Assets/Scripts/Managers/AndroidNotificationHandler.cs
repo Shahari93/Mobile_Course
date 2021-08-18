@@ -4,9 +4,10 @@ using Unity.Notifications.Android;
 using UnityEngine;
 using System;
 
+#if UNITY_ANDROID
 public class AndroidNotificationHandler : MonoBehaviour
 {
-#if UNITY_ANDROID
+
     private const string channelID = "notification_Channel_ID";
 
     public void SceducleNotification()
@@ -26,11 +27,17 @@ public class AndroidNotificationHandler : MonoBehaviour
             Title = "This is a test",
             LargeIcon = "default",
             SmallIcon = "default",
-            FireTime = System.DateTime.Now.AddMinutes(1)
+            FireTime = DateTime.Now.AddMinutes(1)
         };
 
         AndroidNotificationCenter.SendNotification(androidNotification, channelID);
     }
 
-#endif
+
+
+    //private void OnDestroy()
+    //{
+    //    SceducleNotification();
+    //}
 }
+#endif

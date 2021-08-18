@@ -40,9 +40,6 @@ public class PlayerMovementScript : MonoBehaviour
 
         // Clamping the magnitude so we don't fly faster when we hold down the finger
         playerRB.velocity = Vector3.ClampMagnitude(playerRB.velocity, maxForceToAdd);
-
-        //Vector3 clampedMagnitude = Vector3.ClampMagnitude(movement, maxForceToAdd);
-        //playerRB.velocity = clampedMagnitude;
     }
 
     private void ProcessInput()
@@ -63,6 +60,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         else
         {
+            // Will stop depends on the drag property in rigidbody
             movement = Vector3.zero;
         }
     }
