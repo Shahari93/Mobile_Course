@@ -218,3 +218,4 @@ Received Import Request.
 Start importing Assets/Scenes/Asteroid Avoider.unity using Guid(d1c3109bdb54ad54c8a2b2838528e640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a58c21975a3b845e18b07b4c1179a94a') in 0.037810 seconds 
   Import took 0.061149 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
