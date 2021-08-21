@@ -14,4 +14,10 @@ public class Asteroid : MonoBehaviour
             playerHealth.Crash();
         }
     }
+
+    // When the game object goes behind the scene it will be destroied
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
