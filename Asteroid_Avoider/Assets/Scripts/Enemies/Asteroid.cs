@@ -15,6 +15,7 @@ public class Asteroid : MonoBehaviour
         }
     }
 
+    // When the game object goes behind the scene it will be destroied
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
