@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.28502664, g: 0.3713935, b: 0.49601382, a: 1}
+  m_IndirectSpecularColor: {r: 0.2850265, g: 0.37139347, b: 0.4960115, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1292,11 +1292,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd573b962582b3d43b814763f8469ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playAgain: {fileID: 219245711}
-  returnToMainMenu: {fileID: 328960931}
+  playAgainButton: {fileID: 219245711}
+  returnToMainMenuButton: {fileID: 328960931}
+  continueButton: {fileID: 407735734}
   gameOverScreen: {fileID: 1080988344}
   asteroidSpawner: {fileID: 1201380130}
   scoreManager: {fileID: 2025079474}
+  player: {fileID: 1432133665}
 --- !u!1 &1192348720
 GameObject:
   m_ObjectHideFlags: 0

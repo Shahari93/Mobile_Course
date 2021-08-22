@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -29,5 +30,10 @@ public class ScoreManager : MonoBehaviour
     public void CountScore()
     {
         shouldCount = false;
+    }
+
+    public void StartTimer()
+    {
+        shouldCount = true;
     }
 }
